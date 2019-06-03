@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'toppages/index'
   get 'users/index'
   get 'users/show'
   get 'users/new'
@@ -6,7 +7,10 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
+  
+  root to: 'toppages#index'
   root to: 'tasks#index'
+ 
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
